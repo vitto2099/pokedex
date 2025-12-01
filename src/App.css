@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+  --bg: #0b1220;
+  --panel: #0f1724;
+  --muted: #94a3b8;
+  --glass: rgba(255,255,255,0.03);
+  --accent: #ffcc00;
+}
+
+*{ box-sizing: border-box; }
+html, body, #root { height: 100%; margin:0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background:
+    radial-gradient(800px 300px at 10% 8%, rgba(255,255,255,0.02), transparent 6%),
+    linear-gradient(180deg,#071124 0%, #0b1220 40%, #071023 100%);
+  color: #e6eef6;
+  -webkit-font-smoothing: antialiased;
+  padding: 0;
+}
+
+.app {
+  width: 95vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 24px;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pokeb {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg,#ff6b6b,#de2d2d);
+  box-shadow: 0 6px 20px rgba(222,45,45,0.18);
+  font-weight: 800;
+  color: #061022;
+  font-size: 20px;
+  transform: rotate(12deg);
+}
+
+.topbar h1 { margin:0; font-size: 24px; letter-spacing: -0.02em; }
+
+/* Search */
+.search input {
+  width: 420px;
+  max-width: 60vw;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.02);
+  color: inherit;
+  outline: none;
+  transition: box-shadow .12s, transform .08s;
+  font-size: 14px;
+}
+
+.search input::placeholder { color: var(--muted); opacity: 0.7; }
+
+.search input:focus {
+  box-shadow: 0 8px 30px rgba(3,9,23,0.5);
+  transform: translateY(-2px);
+}
+
+/* Grid */
+.gridwrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  width: 100%;
+}
+
+/* Footer */
+.foot {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: auto;
+}
+
+/* Responsivo */
+@media (max-width:860px){
+  .topbar { flex-direction: column; align-items: flex-start; }
+  .search input { width: 100%; max-width: none; }
+}
